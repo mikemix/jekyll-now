@@ -9,7 +9,7 @@ It's really easy to apply DDD style ValueObject UUID ID's in your Doctrine entit
 
 Example domain aggregate root. Notice custom type named _article_id_. We will tell Doctrine how to handle this custom type later on.
 
-```
+```php
 <?php
 
 namespace DDD\DomainBundle\Article\Entity;
@@ -42,7 +42,7 @@ class Article
 
 `ArticleID` extends from `AggregateRootId` to keep some [common logic](https://github.com/mikemix/ddd-value-object-id/blob/master/src/Entity/AggregateRootId.php) separated.
 
-```
+```php
 <?php
 
 namespace DDD\DomainBundle\Article\Entity;
@@ -54,9 +54,9 @@ final class ArticleId extends AggregateRootId
 }
 ```
 
-All of this would not be possible without custom Doctrine mapping type. My `AbstractUuidType` will all the hard work converting to and from the database, storing UUID optimized as `binary(16)`. All you have to do is implement the `getValueObjectClassName` method and return your Value Object's FQCN.
+All of this would not be possible without custom Doctrine mapping type. My `AbstractUuidType` will handle all the hard work converting to and from the database, storing UUID optimized as `binary(16)`. All you have to do is implement the `getValueObjectClassName` method and return your Value Object's FQCN.
 
-```
+```php
 <?php
 
 namespace DDD\InfrastructureBundle\ORM\Type;
@@ -82,7 +82,7 @@ class ArticleIdType extends AbstractUuidType
 
 Type can be easily registered in Symfony's `app/config/config.yml` file:
 
-```
+```yml
 doctrine:
     dbal:
         types:
@@ -91,7 +91,7 @@ doctrine:
 
 Everything should be wired correctly, lets try it:
 
-```
+```php
 <?php
 
 // persist
@@ -103,9 +103,11 @@ $em->flush();
 $article = $em->find(Article::class, 'a1a55638-674a-4d05-a92f-3cd28549ae6d');
 //or
 $article = $em->find(Article::class, new ArticleId('a1a55638-674a-4d05-a92f-3cd28549ae6d'));
+```
 
-// Output:
+Result:
 
+```
 DDD\DomainBundle\Article\Entity\Article Object
 (
     [id:DDD\DomainBundle\Article\Entity\Article:private] => DDD\DomainBundle\Article\Entity\ArticleId Object
@@ -115,4 +117,4 @@ DDD\DomainBundle\Article\Entity\Article Object
 )
 ```
 
-Everything is available via [Composer](https://packagist.org/packages/mikemix/ddd-value-object-id) and can be required as dependency in your project's `composer.json` file, but better idea would be to copy them and use directly on your own.
+Classess are available via [Composer](https://packagist.org/packages/mikemix/ddd-value-object-id) and can be required as dependency in your `composer.json` file, but better idea would be to copy everything to your project. It's always one dependency less.
