@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using custom Value Objects as Doctrine entity ID
+title: Using Value Objects as entity ID in Doctrine
 ---
 
 It's really easy to apply DDD style ValueObject UUID ID's in your Doctrine entities with [custom Doctrine types](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/cookbook/custom-mapping-types.html) and my tiny library available now at [Github](https://github.com/mikemix/ddd-value-object-id).
