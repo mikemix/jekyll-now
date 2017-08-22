@@ -14,4 +14,4 @@ It contains a form, which contains other elements like:
 
 There are a number of comments in the code where I explain what's going on under the hood.
 
-The app is Docker based and easy to run with a couple of simple commands. I published it at Github recently. Just head over to https://github.com/mikemix/zf3-form-example and have fun. I plan on extending the form with more elements so stay tuned.
+The app is Docker based and easy to run with a couple of simple commands. I published it at Github recently. Just head over to [https://github.com/mikemix/zf3-form-example](https://github.com/mikemix/zf3-form-example) and have fun. I plan on extending the form with more elements so stay tuned.
