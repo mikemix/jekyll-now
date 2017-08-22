@@ -9,7 +9,7 @@ As the documentation is lacking and the number of real world examples on the Int
 Currently it contains a form, which contains other elements like:
 * simple e-mail input
 * csrf hidden input
-* a fieldset
+* a fieldset with a fieldset
 * a dropdown with dynamically populated values
 * a dedicated Select2 dropdown
 
