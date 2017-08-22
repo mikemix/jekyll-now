@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How forms should be done in ZF2/3
+title: How forms should be done in Zend Framework 2/3
 ---
 
 Zend Forms are great and flexible, however, even the official documentation does not show how to make them properly. Too many times had I seen people having trouble creating simple forms or form elements.
