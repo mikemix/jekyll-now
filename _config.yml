@@ -23,7 +23,7 @@ footer-links:
   flickr:
   github: mikemix
   instagram:
-  linkedin:
+  linkedin: michael-zukowski
   pinterest:
   rss: /feed.xml
   twitter: mikemix
@@ -41,7 +41,7 @@ google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: https://mikemix.github.io
+url: http://dotcom.software
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
