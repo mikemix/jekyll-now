@@ -19,3 +19,6 @@ the rest is the same as RFC 4122.
 Pity I didn't found any PHP implementation, needed to write one myself. 
 Go and grab it from Packagist as [mikemix/php-uuid-v6](https://packagist.org/packages/mikemix/php-uuid-v6).
 Hope it helps someone!
+
+Hopefully this proposal will make its way through the IETF process some day! 
+[Ben Ramsey](https://github.com/ramsey) already [pledged his help](https://github.com/ramsey/uuid/issues/228).
