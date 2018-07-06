@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Conditional breakpoints in Xdebug with phpStorm
+title: Conditional Xdebug breakpoints in phpStorm
 ---
 
 How many times did you modify that big loop of yours just to make phpStorm enter a debugging session in the right time?
