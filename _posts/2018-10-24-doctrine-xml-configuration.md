@@ -3,6 +3,8 @@ layout: post
 title: How to configure Symfony 4 Doctrine XML mapping
 ---
 
+I've attempted to answer this question lately on [StackOverflow](https://stackoverflow.com/questions/52962708/symfony-4-how-to-implement-doctrine-xml-orm-mapping/52963004#52963004). Astoundingly, the documentation is scarce about this.
+
 Imagine `YourDomain\Entity\Customer` domain object. Define your own mapping first:
 
 ```
