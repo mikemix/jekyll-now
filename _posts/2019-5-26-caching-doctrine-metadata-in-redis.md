@@ -4,7 +4,10 @@ title: Handling Doctrine metadata cache in Redis
 ---
 
 I was recently struggling with putting Doctrine's metadata cache in Redis. It was necessary to avoid CPU spikes by preventing requests hitting the backend when there was no cache present yet for the new schema introduced by the deployed application version.
+
+
 To do this I had to introduce a new Symfony parameter called **SCHEMA_VERSION**:
+
 ```yaml
 parameters:
   # Most import variable :) If the schema did change
