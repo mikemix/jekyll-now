@@ -10,7 +10,7 @@ One has to be aware that to create the Twig environment, every extension has to 
 Now multiply that by the number of extensions in your app, some of them with possibly large dependency tree.
 
 For instance, take a look at [Sylius](https://sylius.com/) – popular e-commerce platform based on Symfony 
-and its `CheckoutStepsExtension`: depending on a helper, which depends on two services, both depending on composite 
+and its `CheckoutStepsExtension` – it depends on a helper, which depends on two services, both depending on composite 
 resolvers, which in turn load another set of their dependencies. 
 
 This extension has to be instantiated every single time Twig is used, even though it's not needed.
@@ -39,6 +39,7 @@ final class CheckoutStepsExtension extends \Twig_Extension
 
 we could move dependencies from the extension to a Twig Runtime:
 
+```php
 final class CheckoutStepsExtension extends \Twig_Extension
 {
     public function getFunctions(): array
@@ -49,9 +50,11 @@ final class CheckoutStepsExtension extends \Twig_Extension
         ];
     }
 }
+```
 
 and the Runtime proxy:
 
+```php
 final class CheckoutStepsHelperRuntime implements RuntimeExtensionInterface
 {
     private $checkoutStepsHelper;
@@ -71,6 +74,7 @@ final class CheckoutStepsHelperRuntime implements RuntimeExtensionInterface
         return $this->checkoutStepsHelper->isPaymentRequired($order);
     }
 }
+```
 
 The `RuntimeExtensionInterface` interface is just for convenience. It enables Symfony DI's autoconfiguration feature
 to tag the class with the `twig.runtime` tag.
