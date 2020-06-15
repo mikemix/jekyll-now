@@ -53,8 +53,8 @@ final class CheckoutStepsExtensionTest extends IntegrationTestCase
         return [new FactoryRuntimeLoader([
             CheckoutStepsHelperRuntime::class => function (): CheckoutStepsHelperRuntime {
                 $helper = $this->prophesize(CheckoutStepsHelper::class);
-                $helper->isShippingRequired(Argument::with(Order::class))->willReturn(true);
-                $helper->isPaymentRequired(Argument::with(Order::class))->willReturn(true);
+                $helper->isShippingRequired(Argument::type(Order::class))->willReturn(true);
+                $helper->isPaymentRequired(Argument::type(Order::class))->willReturn(true);
 
                 return new CheckoutStepsHelperRuntime($helper->reveal());
             }
