@@ -79,4 +79,5 @@ final class CheckoutStepsHelperRuntime implements RuntimeExtensionInterface
 The `RuntimeExtensionInterface` interface is just for convenience. It enables Symfony DI's autoconfiguration feature
 to tag the class with the `twig.runtime` tag.
 
-Last, but not least I hope, remember to test your Twig extensions. In the next post I'll show you how to do that properly.
+Last, but not least I hope, remember to test your Twig extensions. In the [next post](/unit-testing-lazy-twig-extensions/)
+I'll show you how to do that properly.
