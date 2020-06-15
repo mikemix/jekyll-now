@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Unit testing Twig's Lazy Extensions
+excerpt: Last time we wrote a lazy Twig Extension. Today it's time to test it.
 ---
 
-[Last time](/efficient-twig-extensions/) we created a 
-[Lazy Twig extension](https://symfony.com/doc/current/templating/twig_extension.html#creating-lazy-loaded-twig-extensions)
+[Last time](/efficient-twig-extensions/) we wrote a 
+[lazy Twig extension](https://symfony.com/doc/current/templating/twig_extension.html#creating-lazy-loaded-twig-extensions)
 to speed up Twig initialization time.
 
 Today it's time to test it. There's an excellent helper class called `IntegrationTestCase` in the Twig package.
